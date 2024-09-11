@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.json());
 app.use(compression());
 
+app.get("/", (req, res) => {
+  res.json({ msg: "hi" });
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
