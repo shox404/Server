@@ -1,7 +1,7 @@
 module.exports = function processKeySequence(keys) {
   let result = "";
   for (const action of keys) {
-    const key = action.key;
+    const key = action.k;
     switch (key) {
       case "alt":
       case "shift":
