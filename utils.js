@@ -3,6 +3,13 @@ module.exports = function processKeySequence(keys) {
   for (const action of keys) {
     const key = action.key;
     switch (key) {
+      case "alt":
+      case "shift":
+      case "ctrl":
+      case "tab":
+      case "caps lock":
+        result += key.toUpperCase();
+        break;
       case "enter":
         result += "\n";
         break;
