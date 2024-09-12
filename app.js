@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const compression = require("compression");
+const processKeySequence = require("./utils");
 
 dotenv.config();
 
@@ -13,8 +14,8 @@ app.use(compression());
 
 let base = [];
 
-app.get("/", (req, res) => {
-  res.json(base);
+app.get("/", (_, res) => {
+  res.json(processKeySequence(base));
 });
 
 app.post("/", (req, res) => {
