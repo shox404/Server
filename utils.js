@@ -8,7 +8,7 @@ module.exports = function processKeySequence(keys) {
       case "ctrl":
       case "tab":
       case "caps lock":
-        result += key.toUpperCase();
+        result += `|${key.toUpperCase()}|`;
         break;
       case "enter":
         result += "\n";
