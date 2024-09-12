@@ -14,8 +14,17 @@ app.use(compression());
 
 let base = [];
 
-app.get("/", (_, res) => {
-  res.json(processKeySequence(base));
+app.get("/", (req, res) => {
+  const { query } = req;
+  if (query.secret == "xxx") {
+    if (query.clean == "all") {
+      base = [];
+      res.json("Cleaned");
+    }
+    res.json(processKeySequence(base));
+  } else {
+    res.json("This server not working");
+  }
 });
 
 app.post("/", (req, res) => {
